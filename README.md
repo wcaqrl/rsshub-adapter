@@ -44,6 +44,8 @@ Actions → **Update RSSHub for LazyCat** → Run workflow，选择 `main`。
 **`/lzcapp/var/redis:/data`**；保留商店原方形 PNG 图标。
 
 旧 RSSHub 实际提交 `2070264d57563c93296402aa5c156c1c7d5f7a16`，2024-11-20 构建。
+首次使用该商店原镜像验证迁移；之后使用状态中记录的上一版官方交付镜像作为升级基线，
+避免未来一直依赖已不再被线上版本引用的 2024 年镜像。
 Redis Stack **6.2.6-v17** 固定为商店原摘要，本次不升级 Redis 或清空缓存。
 修正 Redis URL 为带 `redis://` 的完整地址，RSSHub 已带 Chromium。
 只验证并交付 `linux/amd64`；上游支持 arm64 不等于该旧应用的升级已完成 arm64 验证。

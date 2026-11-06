@@ -47,8 +47,7 @@ def content_hash(cfg):
     document={k:cfg.get(k) for k in ('os','architecture','rootfs','config')}
     return 'sha256:'+hashlib.sha256(json.dumps(document,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 
-def official_config(reference):
-    from static_registry import blob_url
+def official_digest(reference):
     prefix='registry.lazycat.cloud/'
     if not reference.startswith(prefix):raise ValueError('Expected official runtime image')
     path=reference[len(prefix):]
@@ -58,12 +57,38 @@ def official_config(reference):
         repo,tag=path.rsplit(':',1)
         if not re.fullmatch(r'[a-z0-9_./-]+',repo) or not re.fullmatch(r'[A-Za-z0-9_.-]+',tag):raise ValueError('Invalid official image path')
         digest=fetch('https://registry-static.lazycat.cloud/docker/registry/v2/repositories/'+repo+'/_manifests/tags/'+tag+'/current/link').decode().strip()
+    if not DIGEST.fullmatch(digest):raise ValueError('Invalid official manifest digest')
+    return digest
+
+def pinned_official(reference):
+    return reference.split('@')[0]+'@'+official_digest(reference)
+
+def official_config(reference):
+    from static_registry import blob_url
     def read_blob(digest):
         raw=fetch(blob_url(digest))
         if 'sha256:'+hashlib.sha256(raw).hexdigest()!=digest:raise ValueError('Official metadata digest mismatch')
         return json.loads(raw)
-    manifest=read_blob(digest)
+    manifest=read_blob(official_digest(reference))
     return read_blob(manifest['config']['digest'])
+
+def upgrade_baseline(root=ROOT,pin_official=pinned_official):
+    # Only the first migration depends on the original store image. Following
+    # releases exercise the previous delivered runtime, which remains retained
+    # by the store and actually represents the previous adapter version.
+    baseline=json.loads((root/'scripts/baseline.json').read_text())
+    state=root/'.lazycat-action.lock.yml'
+    if not state.exists():return baseline
+    import yaml
+    lock=yaml.safe_load(state.read_text())
+    source=lock.get('source',{});application=lock.get('application',{})
+    images=[image for image in lock.get('images',[]) if image.get('id')=='rsshub']
+    if application.get('package')!='cloud.lazycat.app.rsshub' or source.get('kind')!='git' or not re.fullmatch('[a-f0-9]{40}',source.get('revision','')) or len(images)!=1:
+        raise ValueError('State does not identify a previous delivered RSSHub release')
+    reference=images[0].get('runtime_ref','')
+    if not reference.startswith('registry.lazycat.cloud/'):raise ValueError('Previous runtime is not an official image')
+    return {'application_version':application['version'],'revision':source['revision'],
+        'image':pin_official(reference),'redis_image':baseline['redis_image'],'origin':'previous-delivered-state'}
 
 def inspect_image(reference):
     host,path=reference.split('/',1)

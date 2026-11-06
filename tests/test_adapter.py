@@ -48,6 +48,24 @@ class ReleaseTests(unittest.TestCase):
         for changed in ({},{'rsshub:koa-redis-cache:old-feed':'different'}):
             with self.assertRaises(ValueError):contract.verify_cache_snapshot(snapshot,changed)
 
+    def test_upgrade_baseline_advances_to_previous_delivered_image(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);(root/'scripts').mkdir()
+            baseline=json.loads((ROOT/'scripts/baseline.json').read_text())
+            (root/'scripts/baseline.json').write_text(json.dumps(baseline))
+            self.assertEqual(upstream.upgrade_baseline(root)['image'],baseline['image'])
+            runtime='registry.lazycat.cloud/peter/diygod/rsshub:previous'
+            lock={'status':'submitted','application':{'package':'cloud.lazycat.app.rsshub','version':'2026.11.8596'},'source':{'kind':'git','revision':'a'*40},'images':[{'id':'rsshub','runtime_ref':runtime}]}
+            (root/'.lazycat-action.lock.yml').write_text(json.dumps(lock))
+            expected=runtime+'@sha256:'+'b'*64
+            chosen=upstream.upgrade_baseline(root,pin_official=lambda ref:expected)
+            self.assertEqual(chosen['image'],expected)
+            self.assertEqual(chosen['revision'],'a'*40)
+            self.assertEqual(chosen['redis_image'],baseline['redis_image'])
+            lock['images'][0]['runtime_ref']='untrusted.example/rsshub:previous'
+            (root/'.lazycat-action.lock.yml').write_text(json.dumps(lock))
+            with self.assertRaises(ValueError):upstream.upgrade_baseline(root,pin_official=lambda ref:expected)
+
 
 class DeliveryTests(unittest.TestCase):
     def setUp(self):

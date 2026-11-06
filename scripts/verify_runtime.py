@@ -16,7 +16,7 @@ import xml.etree.ElementTree as ET
 
 from contract import ROOT,CHECKS,recipe_hash,verify_cache_snapshot
 from static_registry import load_baseline
-from upstream import release_identity,inspect_image,verify_image_config,content_hash,fetch
+from upstream import release_identity,inspect_image,verify_image_config,content_hash,fetch,upgrade_baseline
 
 def docker(*args, binary=False):
     data=subprocess.check_output(['docker',*args],text=not binary)
@@ -34,7 +34,7 @@ def main():
     docker('pull','--platform','linux/amd64',pin)
     candidate=json.loads(docker('image','inspect',pin))[0]
     if candidate['Id']!=manifest['config']['digest']:raise ValueError('Pulled candidate config differs')
-    baseline=json.loads((ROOT/'scripts/baseline.json').read_text())
+    baseline=upgrade_baseline()
     old=load_baseline(baseline);redis=load_baseline({'image':baseline['redis_image']})
     proof=ROOT/'.lazycat-action/runtime-proof.json';proof.parent.mkdir(exist_ok=True)
     proof.unlink(missing_ok=True)
