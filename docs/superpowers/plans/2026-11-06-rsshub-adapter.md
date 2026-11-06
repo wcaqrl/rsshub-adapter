@@ -25,17 +25,17 @@
 ### Task 1: Git 标签映射
 
 Files: `lazycat-action/internal/source/discover.go`、`internal/config/load.go` 及对应测试和配置说明。
-- [ ] 先测试日期标签映射、9/10顺序、peeled SHA，以及只允许 Git tag 策略使用映射。
-- [ ] 执行失败测试；复用现有 versioning 映射规则，仅显式配置启用。
-- [ ] 执行核心完整测试与 lint；发布兼容的 v1 新版本。
+- [x] 先测试日期标签映射、9/10顺序、peeled SHA，以及只允许 Git tag 策略使用映射。
+- [x] 执行失败测试；复用现有 versioning 映射规则，仅显式配置启用。
+- [x] 执行核心完整测试与 lint；发布兼容的 v1 新版本。
 
 ### Task 2: RSSHub adapter
 
 Files: `lazycat-action.yml`、`lzc-manifest.yml`、`package.yml`、`lzc-build.yml`、图标、`scripts/`、`tests/`、`.github/workflows/update.yml`、README。
-- [ ] 先测试源 tag→提交镜像转换、不可变验证记录与配置约束。
-- [ ] 实现 Runner 旧版/新版 Redis 升级与 HTTP/RSS/Chromium 验证，成功才生成打包证明。
-- [ ] 本地轻量测试和 Runner verify-only，核对元数据。
-- [ ] 推送工作流，验证 PAT 权限，真实执行、核对审核、状态提交与 Release 下载。
+- [x] 先测试源 tag→提交镜像转换、不可变验证记录与配置约束。
+- [x] 实现 Runner 旧版/新版 Redis 升级与 HTTP/RSS/Chromium 验证，成功才生成打包证明。
+- [x] 本地轻量测试和 Runner verify-only，核对元数据。
+- [x] 推送工作流，验证 PAT 权限，真实执行、核对审核、状态提交与 Release 下载。
 
 ## 执行记录
 
@@ -48,3 +48,6 @@ Files: `lazycat-action.yml`、`lzc-manifest.yml`、`package.yml`、`lzc-build.ym
 - 真实运行 42191632917 完成旧版升级/Redis/Chromium 验证、镜像转存、LPK 打包、送审及独立 Release。
 - 应用 2026.11.8596，审核编号 22676，提交时 waiting；LPK SHA-256 为 1b5c6ab169251bf6c6cb144348ef3849b42294c5535c561e63b44d33f08eea5f。
 - 补充后续版本测试：首次用原商店基线，之后自动以 state 的上一版官方镜像升级，避免原始旧镜像回收导致长期任务失效；10 项单元测试通过。
+
+- 后续基线 Runner 独立验证 42194119010 已通过（使用上一版官方镜像；生成验证 Artifact，不重复打包送审）。
+- 提交后检查 42193941823 成功，送审和 Release 均跳过同一源版本。
