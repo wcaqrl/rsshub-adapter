@@ -1,0 +1,7 @@
+{
+  "application_version": "1.0.0",
+  "revision": "2070264d57563c93296402aa5c156c1c7d5f7a16",
+  "image": "registry.lazycat.cloud/u3055803370/diygod/rsshub:chromium-bundled@sha256:ce0c2b18a5889c6df7c599aa65b55a83f86bc73dc12d10c2a0d8afb8238fc6f9",
+  "redis_image": "registry.lazycat.cloud/u3055803370/redis/redis-stack-server:6.2.6-v17@sha256:3b387f4e5283f165023b37fd33cfff856b07e5595927bd4d025aef097793a039",
+  "lpk_url": "https://dl.lazycatmicroserver.com/appstore/lpks/pkgs/cloud.lazycat.app.rsshub/cloud.lazycat.app.rsshub-v1.0.0.lpk"
+}

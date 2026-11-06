@@ -1,0 +1,24 @@
+# Preserve the installed service names, subdomain and Redis data directory.
+usage: |
+  根据 RSSHub 文档，将所需路由添加到本应用地址后，即可获取订阅源；
+  已内置 Chromium，Redis 缓存持久保存在 /lzcapp/var/redis。
+application:
+  subdomain: rsshub
+  background_task: true
+  routes:
+    - /=http://rsshub:1200
+services:
+  rsshub:
+    image: registry.lazycat.cloud/u3055803370/diygod/rsshub:chromium-bundled
+    environment:
+      - NODE_ENV=production
+      - TZ=Asia/Shanghai
+      - CACHE_TYPE=redis
+      - REDIS_URL=redis://redis.cloud.lazycat.app.rsshub.lzcapp:6379
+    depends_on:
+      - redis
+  redis:
+    # Keep the original Redis Stack build: this update does not migrate Redis.
+    image: registry.lazycat.cloud/u3055803370/redis/redis-stack-server:6.2.6-v17@sha256:3b387f4e5283f165023b37fd33cfff856b07e5595927bd4d025aef097793a039
+    binds:
+      - /lzcapp/var/redis:/data

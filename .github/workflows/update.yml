@@ -1,0 +1,95 @@
+name: Update RSSHub for LazyCat
+run-name: ${{ (github.event_name == 'push' || inputs.dry-run) && 'RSSHub → LazyCat [仅检查]' || 'RSSHub → LazyCat [验证升级、打包并送审]' }}
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/update.yml
+      - scripts/**
+      - tests/**
+      - lazycat-action.yml
+      - lzc-build.yml
+      - lzc-manifest.yml
+      - package.yml
+      - icon.png
+  schedule:
+    # Every six hours; Beijing 02:53 / 08:53 / 14:53 / 20:53 (may be delayed).
+    - cron: '53 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: 勾选＝仅检查；取消勾选＝验证升级、转存镜像、打包并送审。
+        type: boolean
+        default: true
+      verify-image:
+        description: 仅检查时也在 Runner 验证镜像、旧版缓存升级和 Chromium，不送审。
+        type: boolean
+        default: false
+      retry-rejected:
+        description: 修复后重试已拒绝的源版本，分配新应用版本；须取消仅检查。
+        type: boolean
+        default: false
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: rsshub-lazycat-update
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+      - name: Validate adapter and tested-delivery guards
+        run: |
+          python3 -m pip install --disable-pip-version-check -r requirements-test.txt
+          python3 -B -m unittest discover -s tests -v
+          python3 - <<'PY'
+          import ast, pathlib
+          for path in pathlib.Path('scripts').glob('*.py'): ast.parse(path.read_text())
+          PY
+      - name: Verify developer permission before publication
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && !inputs.dry-run)
+        env:
+          LZC_API_TOKEN: ${{ secrets.LZC_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          git push --dry-run origin "HEAD:${GITHUB_REF_NAME}"
+          test -n "${LZC_API_TOKEN}" || { echo '::error::Configure LZC_API_TOKEN in this adapter Repository secrets.'; exit 1; }
+          curl --fail --silent --show-error --retry 2 \
+            --header "X-API-Token: ${LZC_API_TOKEN}" \
+            --output "${RUNNER_TEMP}/review-access.json" \
+            'https://appstore.api.lazycat.cloud/sdk/v3/developer/app/cloud.lazycat.app.rsshub/review/list?page=0&size=1'
+          python3 - "${RUNNER_TEMP}/review-access.json" <<'PY'
+          import json,sys
+          result=json.load(open(sys.argv[1]))
+          if result.get('errorCode')!=0:raise SystemExit('Developer access denied: '+str(result.get('msg','unknown error')))
+          print('Developer permission for cloud.lazycat.app.rsshub verified.')
+          PY
+      - name: Verify selected release without publishing
+        if: github.event_name == 'workflow_dispatch' && inputs.dry-run && inputs.verify-image
+        run: |
+          python3 -B scripts/verify_latest.py
+      - name: Upload isolated runtime evidence
+        if: always() && github.event_name == 'workflow_dispatch' && inputs.dry-run && inputs.verify-image
+        uses: actions/upload-artifact@v7
+        with:
+          name: rsshub-runtime-verification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            .lazycat-action/runtime-proof.json
+            .lazycat-action/reports/
+          if-no-files-found: ignore
+  update:
+    needs: validate
+    uses: wcaqrl/lazycat-action/.github/workflows/lazycat.yml@v1
+    with:
+      config: lazycat-action.yml
+      operation: auto
+      runner: ubuntu-24.04
+      toolchains: docker
+      enable-qemu: false
+      dry-run: ${{ github.event_name == 'push' || inputs.dry-run || false }}
+      retry-rejected: ${{ github.event_name == 'workflow_dispatch' && inputs.retry-rejected || false }}
+    secrets:
+      LZC_API_TOKEN: ${{ secrets.LZC_API_TOKEN }}

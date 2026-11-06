@@ -1,0 +1,9 @@
+dist/
+.lazycat-action/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.lpk
+*.log
+# .lazycat-action.lock.yml is generated state and MUST stay tracked.

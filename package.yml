@@ -1,0 +1,30 @@
+package: cloud.lazycat.app.rsshub
+version: 1.0.0
+name: RSSHub
+description: 万物皆可 RSS，预装 Chromium 的 RSS 生成服务
+author: DIYgod
+license: AGPL-3.0
+homepage: https://github.com/DIYgod/RSSHub
+min_os_version: 1.6.0
+locales:
+  zh-CN:
+    name: RSSHub
+    description: 万物皆可 RSS，预装 Chromium 的 RSS 生成服务
+    usage: |
+      根据 RSSHub 文档，将所需路由添加到本应用地址后，即可获取订阅源；
+      已内置 Chromium，支持需要浏览器的路由；
+      Redis 缓存持久保存在 /lzcapp/var/redis；
+      部分路由仍需配置对应网站的账号、Cookie 或 API 密钥。
+  en-US:
+    name: RSSHub
+    description: Everything is RSSible, with bundled Chromium
+    usage: |
+      Append a route from the RSSHub documentation to this app's address to obtain a feed;
+      Chromium is bundled for routes that require a browser;
+      Redis cache is persisted in /lzcapp/var/redis;
+      Some routes require site-specific accounts, cookies, or API keys.
+permissions:
+  required:
+    - net.internet
+  optional:
+    - net.lan
