@@ -1,0 +1,105 @@
+version: 2
+source:
+    kind: git
+    version: 2026.11.8596
+    ref: refs/tags/v2026.11.06-8596.4be79cd
+    revision: 4be79cd40cae69ce68b7837f927b63cdab7be719
+    tag: v2026.11.06-8596.4be79cd
+fingerprint: sha256:dd6445bac196e7399283d8e7dac53b7a98e7e26a2a79fdd9a324490e1c608af9
+status: packaged
+images:
+    - id: rsshub
+      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-4be79cd40cae69ce68b7837f927b63cdab7be719@sha256:0b7ff278811c39dbf95cb1a839ea79a1ba847a51c5b16abb3c1dbf1e8d58e811
+      source_digest: sha256:0b7ff278811c39dbf95cb1a839ea79a1ba847a51c5b16abb3c1dbf1e8d58e811
+      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:6eacb43427fcc101
+application:
+    package: cloud.lazycat.app.rsshub
+    version: 2026.11.8596
+    lpk_sha256: 1b5c6ab169251bf6c6cb144348ef3849b42294c5535c561e63b44d33f08eea5f
+    changelog: |-
+        RSSHub update: v2026.11.06-8596.4be79cd
+
+        Upstream changes since 2070264 (7050 commits; up to 80 recent non-merge changes):
+        - fix(route/18comic): update API domain with fallback (#23801) (4be79cd40)
+        - feat(route/81): add Liberation Army Daily (解放军报) route (#23799) (7b21c744a)
+        - fix(route/udn): tolerate malformed JSON-LD in breaking news (#23798) (bb64330ac)
+        - fix(route/cntheory): migrate to paper.studytimes.cn and modernize e-paper route (#23797) (825f37217)
+        - fix(xsijishe): fall back to the browser when a Worker request gets 520 (ef2026bad)
+        - feat(route): add keke (#23795) (17b1822a5)
+        - fix(xsijishe): load the rank page through a browser when Cloudflare challenges it (7509fe03e)
+        - fix(route/instagram): use api on non-image posts (#23794) (f9675b0cd)
+        - fix(route/qstheory): expand latest issue articles in magazine route (#23793) (270729361)
+        - feat(route/ce): add Economic Daily e-paper (#23792) (32706ee76)
+        - chore(deps-dev): bump globals from 17.13.0 to 17.14.0 (#23789) (4974c0d3c)
+        - chore(deps): bump narou from 2.0.1 to 2.1.0 (#23791) (79a50bb5a)
+        - chore(deps-dev): bump the cloudflare group with 3 updates (#23788) (a20f20ec0)
+        - chore(deps-dev): bump eslint-plugin-regexp from 3.3.2 to 3.3.3 (#23790) (117c6fd95)
+        - fix(route/bilibili): keep original titles in browser mode (#23787) (660ff9b95)
+        - feat(route/xiaomi): validate response with zod schemas (#23785) (805cd5353)
+        - fix(route/xueqiu): reuse complete timeline entries and keep reposts in list items (#23717) (9376fd1f9)
+        - feat(route/gmrb): add Guangming Daily e-paper (#23748) (86eb92147)
+        - fix(instagram): support guest carousel media and videos (#23764) (512b8afa0)
+        - fix(route/cnki): read online-first papers from the new oversea knavi API (b21f0ddef)
+        - fix(route/guancha): fetch full text only for paginated articles (#23503) (458fa8a30)
+        - feat(route): add Viva la Vita latest, featured and hot topics (#23735) (eeea04bc2)
+        - feat: 添加 nvidia 和 amd 全文订阅路由 (#23765) (bab0214b6)
+        - feat(core, router): render item commentsUrl as <comments> in RSS output, add Hacker News points (#23736) (273e89b92)
+        - feat(4chan): add per-thread feed and Atom reply links (#23640) (efd633f8d)
+        - fix(route/xueqiu): avoid caching transient detail failures (#23129) (4f2579f38)
+        - fix(route/twitter): preserve full quoted notes and source links (#23716) (83cff4b94)
+        - fix(route/shopback): redirect store feeds to the cashback route (8f4fd4356)
+        - fix(route/jandan): read the query-form feed and the new article body (7036cc2e5)
+        - feat(utils): add parse date range to extract start&end date (#22905) (30aacfaa3)
+        - chore(deps-dev): bump @cloudflare/workers-types (#23780) (aea37f810)
+        - chore(deps): bump otplib from 13.5.0 to 13.6.0 (#23784) (022336165)
+        - fix(route/rumble): read the cookie from the video page redirect (91002a4a3)
+        - chore(deps-dev): bump @mswjs/interceptors (#23782) (1da5b621c)
+        - chore(deps): bump teleproto from 1.232.0 to 1.232.1 (#23783) (f4715a798)
+        - chore(deps): bump hono from 4.13.14 to 4.13.16 in the hono group (#23781) (e8fdfe4c6)
+        - fix(route/twitter): refresh x-client-transaction keys on 404 and retry once (#23769) (fa4d9de3b)
+        - docs: update Swiftproxy sponsor copy (e2f32bc51)
+        - docs: add Swiftproxy sponsor to README (0a4df2e9a)
+        - fix(route/sogou): read result dates from the new source line (813cea7c1)
+        - fix(route/zcmu): read the new list markup on the pharmacy school site (140c3c5dc)
+        - fix(route/whu): keep Hongyi notices that need permission as list entries (26affeb13)
+        - fix(route/rodong): read the news list and articles from the new pages (e57123eae)
+        - fix(route/gov): keep CMSE list entries whose pages were removed (53c4e54a6)
+        - fix(route/lephoceen): read the redesigned chrono page (7dc05d756)
+        - fix(route/lg): follow Shinagawa's moved food permit page (01c50967d)
+        - fix(route/gamme): resolve tag page links against the site root (899c0c98c)
+        - feat(route/bandcamp): add Bandcamp Daily latest articles route (#23746) (71ec12689)
+        - chore(deps): bump vite from 7.3.1 to 8.3.5 (#23776) (16b7443ae)
+        - fix(route/dekudeals): read games from the redesigned list grid (06ffeaa2d)
+        - chore(deps): bump decode-uri-component from 0.5.0 to 0.5.1 (#23775) (b37e37aaa)
+        - feat: run RSSHub as a magpie plugin with tools for agents (0fd8d7135)
+        - fix(utils): keep git's error off stderr when there is no repository (7c942b1b3)
+        - fix(utils): generate headers when browserslist knows newer browsers (be95ceb06)
+        - fix(route/inspirehep): keep the collection pattern inside its parameter (c21c11f3f)
+        - fix(route/aqara): keep the region pattern inside its parameter (1dca23ac7)
+        - fix(route/openalex): use a subfield with recent papers in the example (0ca6a1765)
+        - fix(route/deadbydaylight): fetch the latest articles and allow a missing category (c24abfced)
+        - chore(deps-dev): bump eslint (#23771) (343550485)
+        - fix(route/sina): require the sports type and restore its table (67fb86dd9)
+        - chore(deps-dev): bump @cloudflare/workers-types (#23770) (28aa03be5)
+        - chore(nix): update dependencies hash to sha256-XFh1FwEVsnu7WVsLIMHjxGMYrLiL9Sq3xxiK/NZEIeY= (6b2cc5167)
+        - chore(deps): bump nixpkgs from `31ecbac` to `1c89083` in the nix group (#23773) (5f7d9ddbc)
+        - fix(route/gov): keep NRTA news entries that link to other sites (e616b5fd3)
+        - chore(deps-dev): bump @j178/prek from 0.5.7 to 0.5.9 (#23772) (144bf1b3e)
+        - fix(route/cnu.cc): read works from the redesigned discovery page (c3150beb5)
+        - fix(route/tju): follow the news site's renamed sections (2128fe184)
+        - fix(route/enterprisecraftsmanship): fetch only the latest posts (2c1f4176c)
+        - fix(route/cste): resolve notice links against the site root (34dd2a86f)
+        - fix(route/ltn): read the military channel list from data.items (68b5d0edb)
+        - fix(route/seu): resolve graduate school notice links against the list page (9a18e64aa)
+        - fix(route/ff14): keep Lodestone articles that were taken down (8af1498bf)
+        - fix(route/air-level): use a single path as the rank example (887ed3961)
+        - fix(route/reactiflux): read only the __NEXT_DATA__ script on transcript pages (73b5eabfa)
+        - fix(route/whu): keep campus-only computer science notices as list entries (453b17d07)
+        - fix(route/tencent): read the QQ SDK changelog from the new wiki layout (2cd3b3672)
+        - fix(route/nintendo): skip software entries the CMS returns as null (78a46aa2a)
+        - fix(route/kepu): keep replays whose media lookup returns an error text (24e1856ef)
+        - fix(route/sjtu): read graduate school notices from the new page layout (bc378e1ea)
+        - fix(route/ifun): use the story summary from the list API (7dbca4d74)
+
+        https://github.com/DIYgod/RSSHub/compare/2070264d57563c93296402aa5c156c1c7d5f7a16...4be79cd40cae69ce68b7837f927b63cdab7be719
+packaged_at: 2026-11-06T09:10:28.469758296Z
