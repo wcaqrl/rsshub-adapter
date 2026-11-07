@@ -1,33 +1,29 @@
 version: 2
 source:
     kind: git
-    version: 2026.11.8600
-    ref: refs/tags/v2026.11.07-8600.26c5fa2
-    revision: 26c5fa285617540fa9c7c44fb459061e27f696a3
-    tag: v2026.11.07-8600.26c5fa2
-fingerprint: sha256:e3cd6f7223f74c7bd177c43b611ff216a2e5c3a87a298d701d80c428929b0c01
-status: submitted
+    version: 2026.11.8601
+    ref: refs/tags/v2026.11.07-8601.301009c
+    revision: 301009ce2864e634ed07e17bd42d96aef6f87051
+    tag: v2026.11.07-8601.301009c
+fingerprint: sha256:f1db53bc247610b572b0473e3e65eade714a1c4973b7cd2a7a8888057669e93c
+status: packaged
 images:
     - id: rsshub
-      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-26c5fa285617540fa9c7c44fb459061e27f696a3@sha256:88c6e9654249e9db022dcc4ee106794947781a2de1a29aba958dffc1bd0cf2fd
-      source_digest: sha256:88c6e9654249e9db022dcc4ee106794947781a2de1a29aba958dffc1bd0cf2fd
-      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:1df41c8439a90616
+      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-301009ce2864e634ed07e17bd42d96aef6f87051@sha256:0aac18b7987dfc725ca322036c35a74c349fe90100d6c2560369472ec46926d2
+      source_digest: sha256:0aac18b7987dfc725ca322036c35a74c349fe90100d6c2560369472ec46926d2
+      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:5abfcefaa9f4ed1f
 application:
     package: cloud.lazycat.app.rsshub
-    version: 2026.11.8600
-    lpk_sha256: 2633d6fe13e3e44d7cc91030845f433ee5492c0db20217a278fa03796af3a77c
+    version: 2026.11.8601
+    lpk_sha256: 607ec778216f096602c6b4f144ee4206b1a76633d80befe5d90cac80b5303ab7
     changelog: |-
-        RSSHub update: v2026.11.07-8600.26c5fa2
+        RSSHub update: v2026.11.07-8601.301009c
 
-        Upstream changes since 621561d (5 commits; up to 80 recent non-merge changes):
-        - fix(route/bilibili): list uploads without the challenged space page (26c5fa285)
-        - feat(route): add The Decoder full-text news (#23811) (c5050a076)
-        - docs: update maintainer github id (ca5dc5a5b)
-        - chore: update has write access check (bad10a630)
-        - fix(route/smzdm): fall back to app API when keyword search is blocked (#23810) (f0989154c)
+        Upstream changes since 26c5fa2 (1 commits; up to 80 recent non-merge changes):
+        - feat(route): add Lvshun Museum exhibition and news route (#23812) (301009ce2)
 
-        https://github.com/DIYgod/RSSHub/compare/621561d0c785278fdbb05491266f7420ef38d035...26c5fa285617540fa9c7c44fb459061e27f696a3
-packaged_at: 2026-11-07T06:41:26.257537081Z
+        https://github.com/DIYgod/RSSHub/compare/26c5fa285617540fa9c7c44fb459061e27f696a3...301009ce2864e634ed07e17bd42d96aef6f87051
+packaged_at: 2026-11-07T22:24:42.744838315Z
 reviews:
     - id: 22676
       source:
