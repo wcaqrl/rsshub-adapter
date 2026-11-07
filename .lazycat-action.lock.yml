@@ -54,10 +54,11 @@ reviews:
       fingerprint: sha256:7ad1a5fb673b5b0b207274b352bdfaa505f2acc57aa0f235ca3bd3c32d0d975c
       application_version: 2026.11.8597
       lpk_sha256: 1ec5181d4f21feb535d23432403531d2eb7bbb1d2d71f731b00e26c508f1ec42
-      status: waiting
+      status: canceled
+      reason: 开发者提交新的审核，系统自动取消旧审核
       created_at: 2026-11-06T19:48:40.525Z
       submitted_at: 2026-11-06T19:48:40.655992711Z
-      checked_at: 2026-11-06T19:48:40.655993281Z
+      checked_at: 2026-11-07T13:36:40.536222047Z
     - id: 22732
       source:
         kind: git
