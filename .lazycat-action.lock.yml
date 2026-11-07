@@ -1,37 +1,33 @@
 version: 2
 source:
     kind: git
-    version: 2026.11.8597
-    ref: refs/tags/v2026.11.06-8597.621561d
-    revision: 621561d0c785278fdbb05491266f7420ef38d035
-    tag: v2026.11.06-8597.621561d
-fingerprint: sha256:7ad1a5fb673b5b0b207274b352bdfaa505f2acc57aa0f235ca3bd3c32d0d975c
-status: submitted
+    version: 2026.11.8600
+    ref: refs/tags/v2026.11.07-8600.26c5fa2
+    revision: 26c5fa285617540fa9c7c44fb459061e27f696a3
+    tag: v2026.11.07-8600.26c5fa2
+fingerprint: sha256:e3cd6f7223f74c7bd177c43b611ff216a2e5c3a87a298d701d80c428929b0c01
+status: packaged
 images:
     - id: rsshub
-      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-621561d0c785278fdbb05491266f7420ef38d035@sha256:15a0818474d11da5c365cfe5649a97df04d99d1f88a92051eae8c4b80fdbd1a4
-      source_digest: sha256:15a0818474d11da5c365cfe5649a97df04d99d1f88a92051eae8c4b80fdbd1a4
-      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:f643abc0dfbd7a90
+      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-26c5fa285617540fa9c7c44fb459061e27f696a3@sha256:88c6e9654249e9db022dcc4ee106794947781a2de1a29aba958dffc1bd0cf2fd
+      source_digest: sha256:88c6e9654249e9db022dcc4ee106794947781a2de1a29aba958dffc1bd0cf2fd
+      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:1df41c8439a90616
 application:
     package: cloud.lazycat.app.rsshub
-    version: 2026.11.8597
-    lpk_sha256: 1ec5181d4f21feb535d23432403531d2eb7bbb1d2d71f731b00e26c508f1ec42
+    version: 2026.11.8600
+    lpk_sha256: 2633d6fe13e3e44d7cc91030845f433ee5492c0db20217a278fa03796af3a77c
     changelog: |-
-        RSSHub update: v2026.11.06-8597.621561d
+        RSSHub update: v2026.11.07-8600.26c5fa2
 
-        Upstream changes since 4be79cd (9 commits; up to 80 recent non-merge changes):
-        - fix(route/zagg): read new arrivals from the Shopify store (621561d0c)
-        - chore(deps-dev): bump the cloudflare group across 1 directory with 4 updates (#23803) (b9f010730)
-        - chore(deps): bump the oxc group across 1 directory with 2 updates (#23805) (abb1914b2)
-        - chore(nix): update dependencies hash to sha256-29WpeF6gyjbX7Yfxf0pmMk90UxIsTZ4GipUN8SQfHt4= (329f20596)
-        - chore(deps): bump nixpkgs from `1c89083` to `0bb2eed` in the nix group (#23809) (331c47fa4)
-        - chore(deps): bump patchright from 1.64.2 to 1.64.3 (#23807) (6c0a514ea)
-        - chore(deps): bump x-client-transaction-id from 0.3.2 to 0.3.3 (#23808) (392f127f1)
-        - chore(deps): bump @hono/node-server (#23804) (f1900c353)
-        - chore(deps): bump pnpm/action-setup from 6.1.0 to 6.1.1 (#23802) (656c9cb08)
+        Upstream changes since 621561d (5 commits; up to 80 recent non-merge changes):
+        - fix(route/bilibili): list uploads without the challenged space page (26c5fa285)
+        - feat(route): add The Decoder full-text news (#23811) (c5050a076)
+        - docs: update maintainer github id (ca5dc5a5b)
+        - chore: update has write access check (bad10a630)
+        - fix(route/smzdm): fall back to app API when keyword search is blocked (#23810) (f0989154c)
 
-        https://github.com/DIYgod/RSSHub/compare/4be79cd40cae69ce68b7837f927b63cdab7be719...621561d0c785278fdbb05491266f7420ef38d035
-packaged_at: 2026-11-06T19:48:23.10003665Z
+        https://github.com/DIYgod/RSSHub/compare/621561d0c785278fdbb05491266f7420ef38d035...26c5fa285617540fa9c7c44fb459061e27f696a3
+packaged_at: 2026-11-07T06:41:26.257537081Z
 reviews:
     - id: 22676
       source:
@@ -43,10 +39,11 @@ reviews:
       fingerprint: sha256:dd6445bac196e7399283d8e7dac53b7a98e7e26a2a79fdd9a324490e1c608af9
       application_version: 2026.11.8596
       lpk_sha256: 1b5c6ab169251bf6c6cb144348ef3849b42294c5535c561e63b44d33f08eea5f
-      status: waiting
+      status: canceled
+      reason: 开发者提交新的审核，系统自动取消旧审核
       created_at: 2026-11-06T09:10:47.557Z
       submitted_at: 2026-11-06T09:10:47.691086889Z
-      checked_at: 2026-11-06T09:10:47.691087524Z
+      checked_at: 2026-11-07T06:39:18.321979524Z
     - id: 22710
       source:
         kind: git
