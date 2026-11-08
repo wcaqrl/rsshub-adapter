@@ -1,29 +1,35 @@
 version: 2
 source:
     kind: git
-    version: 2026.11.8601
-    ref: refs/tags/v2026.11.07-8601.301009c
-    revision: 301009ce2864e634ed07e17bd42d96aef6f87051
-    tag: v2026.11.07-8601.301009c
-fingerprint: sha256:f1db53bc247610b572b0473e3e65eade714a1c4973b7cd2a7a8888057669e93c
-status: submitted
+    version: 2026.11.8603
+    ref: refs/tags/v2026.11.08-8603.84dedd7
+    revision: 84dedd7a7f7289a2b1987bc3c8cc9293205e904e
+    tag: v2026.11.08-8603.84dedd7
+fingerprint: sha256:1ef4c4e9bb0f0f33fea69e7bf63d19f3005d6b578fefacad7669aa211f364224
+status: packaged
 images:
     - id: rsshub
-      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-301009ce2864e634ed07e17bd42d96aef6f87051@sha256:0aac18b7987dfc725ca322036c35a74c349fe90100d6c2560369472ec46926d2
-      source_digest: sha256:0aac18b7987dfc725ca322036c35a74c349fe90100d6c2560369472ec46926d2
-      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:5abfcefaa9f4ed1f
+      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-84dedd7a7f7289a2b1987bc3c8cc9293205e904e@sha256:115632926a3bf225d22183817eb82609001db09f059b43cefdbe159031b4dd18
+      source_digest: sha256:115632926a3bf225d22183817eb82609001db09f059b43cefdbe159031b4dd18
+      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:b7c41edea666ade7
 application:
     package: cloud.lazycat.app.rsshub
-    version: 2026.11.8601
-    lpk_sha256: 607ec778216f096602c6b4f144ee4206b1a76633d80befe5d90cac80b5303ab7
+    version: 2026.11.8603
+    lpk_sha256: 8ae994b4e5bcc79157753b21207d08c3a03b3f66c709c52e5d49b35a85dfce72
     changelog: |-
-        RSSHub update: v2026.11.07-8601.301009c
+        RSSHub update: v2026.11.08-8603.84dedd7
 
-        Upstream changes since 26c5fa2 (1 commits; up to 80 recent non-merge changes):
-        - feat(route): add Lvshun Museum exhibition and news route (#23812) (301009ce2)
+        Upstream changes since 301009c (7 commits; up to 80 recent non-merge changes):
+        - fix(route/163): use all-time records in the play record example (84dedd7a7)
+        - fix(route/mymusicsheet): list all sheets in the example (f253a1e4f)
+        - fix(route/reactnativenewsletter): read past issues from the page itself (0b07e7394)
+        - fix(route/manictime): read the redesigned release notes page (d29d5b5c6)
+        - fix(route/malaysiakini): read free articles whose teaser is empty (01056256b)
+        - fix(route/thecover): skip the original-news tag when reading the date (bac1af88c)
+        - fix(route/rfa): allow stories without a description (06bc3da2d)
 
-        https://github.com/DIYgod/RSSHub/compare/26c5fa285617540fa9c7c44fb459061e27f696a3...301009ce2864e634ed07e17bd42d96aef6f87051
-packaged_at: 2026-11-07T22:24:42.744838315Z
+        https://github.com/DIYgod/RSSHub/compare/301009ce2864e634ed07e17bd42d96aef6f87051...84dedd7a7f7289a2b1987bc3c8cc9293205e904e
+packaged_at: 2026-11-08T06:47:18.238503097Z
 reviews:
     - id: 22676
       source:
@@ -65,10 +71,11 @@ reviews:
       fingerprint: sha256:e3cd6f7223f74c7bd177c43b611ff216a2e5c3a87a298d701d80c428929b0c01
       application_version: 2026.11.8600
       lpk_sha256: 2633d6fe13e3e44d7cc91030845f433ee5492c0db20217a278fa03796af3a77c
-      status: waiting
+      status: canceled
+      reason: 开发者提交新的审核，系统自动取消旧审核
       created_at: 2026-11-07T06:41:45.365Z
       submitted_at: 2026-11-07T06:41:45.488292971Z
-      checked_at: 2026-11-07T06:41:45.488293712Z
+      checked_at: 2026-11-08T06:45:08.276279054Z
     - id: 22769
       source:
         kind: git
