@@ -1,29 +1,31 @@
 version: 2
 source:
     kind: git
-    version: 2026.11.8604
-    ref: refs/tags/v2026.11.08-8604.4a55d6c
-    revision: 4a55d6ccf299c4df8825f652567a409591f4c380
-    tag: v2026.11.08-8604.4a55d6c
-fingerprint: sha256:cfccda4de1509cb771da8b9b16cc2af397acb58989a00ffe90274fd5af6428da
-status: submitted
+    version: 2026.11.8607
+    ref: refs/tags/v2026.11.08-8607.e20ac97
+    revision: e20ac9791e5ef506a72fd2566c0225629af1c09d
+    tag: v2026.11.08-8607.e20ac97
+fingerprint: sha256:3743928ed52c6f7d076ccf684f0497a980df5da108bbcfc93dc77bc3d02244c9
+status: packaged
 images:
     - id: rsshub
-      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-4a55d6ccf299c4df8825f652567a409591f4c380@sha256:e64e213c036e139ec3784294dc362f0bb166dc8608417d4ac372c65ab7e79ee7
-      source_digest: sha256:e64e213c036e139ec3784294dc362f0bb166dc8608417d4ac372c65ab7e79ee7
-      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:a4c791c50edb5630
+      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-e20ac9791e5ef506a72fd2566c0225629af1c09d@sha256:9b359de8ecad6cac5e65a36ed992e77a2401c9781a7056476ba972dbba660d94
+      source_digest: sha256:9b359de8ecad6cac5e65a36ed992e77a2401c9781a7056476ba972dbba660d94
+      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:15f7985ce8b77e71
 application:
     package: cloud.lazycat.app.rsshub
-    version: 2026.11.8604
-    lpk_sha256: 6c609b67cd02cfbccba69a12f708c034e3ef42fa7ca7faaa93541401940aca2e
+    version: 2026.11.8607
+    lpk_sha256: b79f61cc7bf0ea1f966e18a8c4915d7b5d816a11c9cbcc6b1769a5637e7629ae
     changelog: |-
-        RSSHub update: v2026.11.08-8604.4a55d6c
+        RSSHub update: v2026.11.08-8607.e20ac97
 
-        Upstream changes since 84dedd7 (1 commits; up to 80 recent non-merge changes):
-        - fix(route/polymarket): move leaderboard, positions and user to data API v2 (#23814) (4a55d6ccf)
+        Upstream changes since 4a55d6c (3 commits; up to 80 recent non-merge changes):
+        - fix: allow empty in 163 and mymusicsheet (#23820) (e20ac9791)
+        - fix: youtube error 153 regression (#23819) (0e7b9b292)
+        - fix(route/sigsac): rebuild CCS accepted paper feeds (#23818) (15e7e8d42)
 
-        https://github.com/DIYgod/RSSHub/compare/84dedd7a7f7289a2b1987bc3c8cc9293205e904e...4a55d6ccf299c4df8825f652567a409591f4c380
-packaged_at: 2026-11-08T13:57:20.923853005Z
+        https://github.com/DIYgod/RSSHub/compare/4a55d6ccf299c4df8825f652567a409591f4c380...e20ac9791e5ef506a72fd2566c0225629af1c09d
+packaged_at: 2026-11-08T22:33:31.556915369Z
 reviews:
     - id: 22676
       source:
@@ -95,10 +97,11 @@ reviews:
       fingerprint: sha256:1ef4c4e9bb0f0f33fea69e7bf63d19f3005d6b578fefacad7669aa211f364224
       application_version: 2026.11.8603
       lpk_sha256: 8ae994b4e5bcc79157753b21207d08c3a03b3f66c709c52e5d49b35a85dfce72
-      status: waiting
+      status: canceled
+      reason: 开发者提交新的审核，系统自动取消旧审核
       created_at: 2026-11-08T06:47:37.341Z
       submitted_at: 2026-11-08T06:47:37.635650482Z
-      checked_at: 2026-11-08T06:47:37.635651063Z
+      checked_at: 2026-11-08T22:31:39.464691803Z
     - id: 22794
       source:
         kind: git
