@@ -9,8 +9,8 @@ application:
     - /=http://rsshub:1200
 services:
   rsshub:
-    # upstream: ghcr.io/diygod/rsshub:chromium-bundled-e20ac9791e5ef506a72fd2566c0225629af1c09d@sha256:9b359de8ecad6cac5e65a36ed992e77a2401c9781a7056476ba972dbba660d94
-    image: registry.lazycat.cloud/peter/diygod/rsshub:15f7985ce8b77e71
+    # upstream: ghcr.io/diygod/rsshub:chromium-bundled-f813abebdbca64733452000f73c79e5b8f8b4716@sha256:30088711b3f6cd76b3e603d68b1c18e42322bee697098d23ae5c76575af936d3
+    image: registry.lazycat.cloud/peter/diygod/rsshub:5757eae1462aeb9a
     environment:
       - NODE_ENV=production
       - TZ=Asia/Shanghai

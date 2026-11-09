@@ -1,31 +1,31 @@
 version: 2
 source:
     kind: git
-    version: 2026.11.8607
-    ref: refs/tags/v2026.11.08-8607.e20ac97
-    revision: e20ac9791e5ef506a72fd2566c0225629af1c09d
-    tag: v2026.11.08-8607.e20ac97
-fingerprint: sha256:3743928ed52c6f7d076ccf684f0497a980df5da108bbcfc93dc77bc3d02244c9
-status: submitted
+    version: 2026.11.8610
+    ref: refs/tags/v2026.11.09-8610.f813abe
+    revision: f813abebdbca64733452000f73c79e5b8f8b4716
+    tag: v2026.11.09-8610.f813abe
+fingerprint: sha256:8948062394b8b49b52a072429548465ecd94065fa0bebd38edbf0f85610a5236
+status: packaged
 images:
     - id: rsshub
-      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-e20ac9791e5ef506a72fd2566c0225629af1c09d@sha256:9b359de8ecad6cac5e65a36ed992e77a2401c9781a7056476ba972dbba660d94
-      source_digest: sha256:9b359de8ecad6cac5e65a36ed992e77a2401c9781a7056476ba972dbba660d94
-      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:15f7985ce8b77e71
+      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-f813abebdbca64733452000f73c79e5b8f8b4716@sha256:30088711b3f6cd76b3e603d68b1c18e42322bee697098d23ae5c76575af936d3
+      source_digest: sha256:30088711b3f6cd76b3e603d68b1c18e42322bee697098d23ae5c76575af936d3
+      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:5757eae1462aeb9a
 application:
     package: cloud.lazycat.app.rsshub
-    version: 2026.11.8607
-    lpk_sha256: b79f61cc7bf0ea1f966e18a8c4915d7b5d816a11c9cbcc6b1769a5637e7629ae
+    version: 2026.11.8610
+    lpk_sha256: ff4361be7bdbc6385a278990e7f13f3156ef76bec092c889986e6f967924e522
     changelog: |-
-        RSSHub update: v2026.11.08-8607.e20ac97
+        RSSHub update: v2026.11.09-8610.f813abe
 
-        Upstream changes since 4a55d6c (3 commits; up to 80 recent non-merge changes):
-        - fix: allow empty in 163 and mymusicsheet (#23820) (e20ac9791)
-        - fix: youtube error 153 regression (#23819) (0e7b9b292)
-        - fix(route/sigsac): rebuild CCS accepted paper feeds (#23818) (15e7e8d42)
+        Upstream changes since e20ac97 (3 commits; up to 80 recent non-merge changes):
+        - fix(route/nmc): merge lead-time forecast images into one item per issue (#23822) (f813abebd)
+        - Revert "fix(route/bilibili): rotate the shared visitor cookie" (cb7561839)
+        - fix(route/bilibili): rotate the shared visitor cookie (3a3f1f8cf)
 
-        https://github.com/DIYgod/RSSHub/compare/4a55d6ccf299c4df8825f652567a409591f4c380...e20ac9791e5ef506a72fd2566c0225629af1c09d
-packaged_at: 2026-11-08T22:33:31.556915369Z
+        https://github.com/DIYgod/RSSHub/compare/e20ac9791e5ef506a72fd2566c0225629af1c09d...f813abebdbca64733452000f73c79e5b8f8b4716
+packaged_at: 2026-11-09T07:18:42.789480924Z
 reviews:
     - id: 22676
       source:
@@ -112,10 +112,11 @@ reviews:
       fingerprint: sha256:cfccda4de1509cb771da8b9b16cc2af397acb58989a00ffe90274fd5af6428da
       application_version: 2026.11.8604
       lpk_sha256: 6c609b67cd02cfbccba69a12f708c034e3ef42fa7ca7faaa93541401940aca2e
-      status: waiting
+      status: canceled
+      reason: 开发者提交新的审核，系统自动取消旧审核
       created_at: 2026-11-08T13:57:37.55Z
       submitted_at: 2026-11-08T13:57:37.676716501Z
-      checked_at: 2026-11-08T13:57:37.67671707Z
+      checked_at: 2026-11-09T07:16:31.006030222Z
     - id: 22811
       source:
         kind: git
@@ -126,7 +127,7 @@ reviews:
       fingerprint: sha256:3743928ed52c6f7d076ccf684f0497a980df5da108bbcfc93dc77bc3d02244c9
       application_version: 2026.11.8607
       lpk_sha256: b79f61cc7bf0ea1f966e18a8c4915d7b5d816a11c9cbcc6b1769a5637e7629ae
-      status: waiting
+      status: approved
       created_at: 2026-11-08T22:33:49.682Z
       submitted_at: 2026-11-08T22:33:49.842907062Z
-      checked_at: 2026-11-08T22:33:49.842907412Z
+      checked_at: 2026-11-09T07:16:31.322719348Z
