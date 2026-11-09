@@ -1,31 +1,55 @@
 version: 2
 source:
     kind: git
-    version: 2026.11.8610
-    ref: refs/tags/v2026.11.09-8610.f813abe
-    revision: f813abebdbca64733452000f73c79e5b8f8b4716
-    tag: v2026.11.09-8610.f813abe
-fingerprint: sha256:8948062394b8b49b52a072429548465ecd94065fa0bebd38edbf0f85610a5236
-status: submitted
+    version: 2026.11.8615
+    ref: refs/tags/v2026.11.09-8615.5e169d9
+    revision: 5e169d996cfa48368babbe95cb6dd43fb743bd8e
+    tag: v2026.11.09-8615.5e169d9
+fingerprint: sha256:23187f09801341f8805ac8f46ec99dc8994c1d0346806ede0dd6b5e0b70cccdc
+status: packaged
 images:
     - id: rsshub
-      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-f813abebdbca64733452000f73c79e5b8f8b4716@sha256:30088711b3f6cd76b3e603d68b1c18e42322bee697098d23ae5c76575af936d3
-      source_digest: sha256:30088711b3f6cd76b3e603d68b1c18e42322bee697098d23ae5c76575af936d3
-      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:5757eae1462aeb9a
+      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-5e169d996cfa48368babbe95cb6dd43fb743bd8e@sha256:d152cc99145bc176d2677551955511cb5c5a49bba6f1e2e22532acead6fec6cb
+      source_digest: sha256:d152cc99145bc176d2677551955511cb5c5a49bba6f1e2e22532acead6fec6cb
+      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:d7d0be045854d62e
 application:
     package: cloud.lazycat.app.rsshub
-    version: 2026.11.8610
-    lpk_sha256: ff4361be7bdbc6385a278990e7f13f3156ef76bec092c889986e6f967924e522
+    version: 2026.11.8615
+    lpk_sha256: b598ecb11a0222156f73755bfb7b9427d2496a790973fc52595bb7de7cb94975
     changelog: |-
-        RSSHub update: v2026.11.09-8610.f813abe
+        RSSHub update: v2026.11.09-8615.5e169d9
 
-        Upstream changes since e20ac97 (3 commits; up to 80 recent non-merge changes):
-        - fix(route/nmc): merge lead-time forecast images into one item per issue (#23822) (f813abebd)
-        - Revert "fix(route/bilibili): rotate the shared visitor cookie" (cb7561839)
-        - fix(route/bilibili): rotate the shared visitor cookie (3a3f1f8cf)
+        Upstream changes since f813abe (27 commits; up to 80 recent non-merge changes):
+        - fix(route/aljazeera): remove the retired Chinese site (5e169d996)
+        - fix(route/nytimes): default the rss category to HomePage (c4f8d032e)
+        - fix(route/gov): read 政务联播 for the cn news bm category (0db514c11)
+        - feat(route/ndss-symposium): add optional full abstract mode (#23843) (d851e61b8)
+        - fix(route/nmc): give daily lead-time forecasts one dated item per issue (393d582ac)
+        - fix(route/bbcnewslabs): remove the news route for the retired site (0d465a68a)
+        - chore(deps): bump docker/login-action from 4.7.0 to 4.8.0 (#23825) (fa14096f3)
+        - chore(deps-dev): bump the cloudflare group across 1 directory with 4 updates (#23824) (6c2af9b71)
+        - chore(deps-dev): bump the oxc group across 1 directory with 5 updates (#23830) (c4d19c811)
+        - chore(deps): bump @sentry/node from 11.10.0 to 11.11.0 (#23831) (5608929a9)
+        - chore(deps): bump the opentelemetry group across 1 directory with 5 updates (#23829) (7cdcc38e3)
+        - chore(deps-dev): bump rolldown from 1.2.16 to 1.3.0 (#23833) (0f306a47e)
+        - chore(deps): bump jsdom from 30.1.3 to 31.0.0 (#23841) (ed9cd271c)
+        - chore(nix): update dependencies hash to sha256-4UA3Hac/YMHX5qMT3pmBbUAgXK7RDGdZKW7fMVpkP5w= (2709c21f1)
+        - chore(deps): bump rate-limiter-flexible from 11.2.3 to 11.3.0 (#23836) (504b7b739)
+        - chore(deps): bump @notionhq/client from 5.30.0 to 5.31.0 (#23839) (dbd818521)
+        - chore(deps-dev): bump eslint-plugin-yml from 3.9.0 to 3.10.0 (#23840) (05e8dcc28)
+        - chore(deps): bump the nix group with 2 updates (#23842) (c7ab1b0f7)
+        - chore(deps): bump imapflow from 2.10.0 to 2.10.2 (#23837) (79b10fb70)
+        - chore(deps-dev): bump @vercel/nft from 1.11.0 to 1.11.1 (#23838) (3b7634465)
+        - chore(deps-dev): bump @j178/prek from 0.5.9 to 0.5.10 (#23835) (40b33bd8a)
+        - chore(deps): bump undici from 8.12.3 to 8.12.4 (#23832) (e1dbc6e5d)
+        - chore(deps-dev): bump tsdown from 0.23.4 to 0.23.5 (#23834) (c5a699c3d)
+        - chore(deps-dev): bump msw from 3.0.3 to 3.0.4 in the msw group (#23828) (fd7e2d4df)
+        - chore(deps): bump @scalar/hono-api-reference (#23827) (4b47787fb)
+        - chore(deps): bump amannn/action-semantic-pull-request (#23823) (65d191511)
+        - chore(deps): bump softprops/action-gh-release from 3.0.3 to 3.0.4 (#23826) (bee529841)
 
-        https://github.com/DIYgod/RSSHub/compare/e20ac9791e5ef506a72fd2566c0225629af1c09d...f813abebdbca64733452000f73c79e5b8f8b4716
-packaged_at: 2026-11-09T07:18:42.789480924Z
+        https://github.com/DIYgod/RSSHub/compare/f813abebdbca64733452000f73c79e5b8f8b4716...5e169d996cfa48368babbe95cb6dd43fb743bd8e
+packaged_at: 2026-11-09T22:47:20.686452121Z
 reviews:
     - id: 22676
       source:
@@ -141,7 +165,7 @@ reviews:
       fingerprint: sha256:8948062394b8b49b52a072429548465ecd94065fa0bebd38edbf0f85610a5236
       application_version: 2026.11.8610
       lpk_sha256: ff4361be7bdbc6385a278990e7f13f3156ef76bec092c889986e6f967924e522
-      status: waiting
+      status: approved
       created_at: 2026-11-09T07:19:11.44Z
       submitted_at: 2026-11-09T07:19:11.556429055Z
-      checked_at: 2026-11-09T07:19:11.556429846Z
+      checked_at: 2026-11-09T22:45:09.296045104Z
