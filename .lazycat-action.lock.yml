@@ -1,34 +1,40 @@
 version: 2
 source:
     kind: git
-    version: 2026.11.8618
-    ref: refs/tags/v2026.11.10-8618.bbc351a
-    revision: bbc351a29d44f58aa66cfaf4eec5a6af61205ffb
-    tag: v2026.11.10-8618.bbc351a
-fingerprint: sha256:253aae10d001a1fdac1563013e72e4681a2258f8b2793eef2da708a67e45675c
-status: submitted
+    version: 2026.11.8622
+    ref: refs/tags/v2026.11.10-8622.fd7461b
+    revision: fd7461bbf126718da864429fe64ee3a065df2d5f
+    tag: v2026.11.10-8622.fd7461b
+fingerprint: sha256:481074c4c2d6d9d9700097f9615f0e80885a2b0f53110de5347b0a79b1225801
+status: packaged
 images:
     - id: rsshub
-      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-bbc351a29d44f58aa66cfaf4eec5a6af61205ffb@sha256:373d2958ac970a1a32048744eef67983a67005d0f34ea091d44d43fac1d4eda9
-      source_digest: sha256:373d2958ac970a1a32048744eef67983a67005d0f34ea091d44d43fac1d4eda9
-      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:a1606465bdc5f998
+      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-fd7461bbf126718da864429fe64ee3a065df2d5f@sha256:2f9e11d7f6544399407733fb4e830977b9a758962460ecfb1d34ec44bdbc12d2
+      source_digest: sha256:2f9e11d7f6544399407733fb4e830977b9a758962460ecfb1d34ec44bdbc12d2
+      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:aa3daf3552928f6b
 application:
     package: cloud.lazycat.app.rsshub
-    version: 2026.11.8618
-    lpk_sha256: 144ed09c1a5bc54499817003b56441c1821decabf75cf53c8bfbe8fd30ca9f78
+    version: 2026.11.8622
+    lpk_sha256: 2e748a72cafcc5f474d7aad5c9a8a9820dc3c46f83a26a3b4951ea6232688972
     changelog: |-
-        RSSHub update: v2026.11.10-8618.bbc351a
+        RSSHub update: v2026.11.10-8622.fd7461b
 
-        Upstream changes since 5e169d9 (6 commits; up to 80 recent non-merge changes):
-        - fix(route/straitstimes): keep the feed up when a list has an interactive graphic (bbc351a29)
-        - fix(route/indienova): parse the relative time on recent articles (463c0efae)
-        - fix(route/setn): read title and time on health.setn.com articles (89956595d)
-        - fix(route/douban): filter movie classification by score on Douban's side (771326cf5)
-        - fix(route/jinse): normalize jinse.cn article links (1fa515785)
-        - fix(route/sse): follow the rules section to sselawsrules2025 (20cb7458f)
+        Upstream changes since bbc351a (12 commits; up to 80 recent non-merge changes):
+        - fix(route/xjtu): keep the job feed up when an announcement links off the site (fd7461bbf)
+        - fix(route/gov): keep the list title when a MOA pig policy page has no heading (1729ca9d8)
+        - chore(deps-dev): bump the oxc group with 4 updates (#23849) (0172a2b38)
+        - chore(deps): bump tough-cookie from 6.0.2 to 6.1.0 (#23852) (1ba4c0bf7)
+        - chore(deps): bump imapflow from 2.10.2 to 2.11.0 (#23853) (546505738)
+        - fix(route/ithome): read the publish time on tag pages (b9a944a05)
+        - chore(deps): bump @opentelemetry/semantic-conventions (#23848) (daac23508)
+        - chore(deps-dev): bump @cloudflare/workers-types (#23846) (6c28422be)
+        - fix(route/thehindu): read the article body and publish time from the current page (d55f71d8a)
+        - chore(deps): bump @notionhq/client from 5.31.0 to 5.31.1 (#23850) (f30b75588)
+        - chore(deps-dev): bump tsdown from 0.23.5 to 0.23.7 (#23851) (c81b8bfc2)
+        - chore(deps): bump hono from 4.13.16 to 4.13.17 in the hono group (#23847) (ecb462395)
 
-        https://github.com/DIYgod/RSSHub/compare/5e169d996cfa48368babbe95cb6dd43fb743bd8e...bbc351a29d44f58aa66cfaf4eec5a6af61205ffb
-packaged_at: 2026-11-10T07:59:16.669609998Z
+        https://github.com/DIYgod/RSSHub/compare/bbc351a29d44f58aa66cfaf4eec5a6af61205ffb...fd7461bbf126718da864429fe64ee3a065df2d5f
+packaged_at: 2026-11-10T20:05:02.492312288Z
 reviews:
     - id: 22676
       source:
