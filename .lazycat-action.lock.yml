@@ -1,30 +1,38 @@
 version: 2
 source:
     kind: git
-    version: 2026.11.8624
-    ref: refs/tags/v2026.11.11-8624.e58c57e
-    revision: e58c57ee228da65ec182cb47719d4506496a0edd
-    tag: v2026.11.11-8624.e58c57e
-fingerprint: sha256:19bf6bbbea97f261a7d320d73c215c00a130f601fe8523ae8ab46da4bee50ae2
-status: submitted
+    version: 2026.11.8630
+    ref: refs/tags/v2026.11.11-8630.75822b7
+    revision: 75822b7e88d12552ee60c44785f644171d691142
+    tag: v2026.11.11-8630.75822b7
+fingerprint: sha256:38f69c268cf65717ee2234b7433f0a990afb0427b2cbfec41797f22161097ff4
+status: packaged
 images:
     - id: rsshub
-      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-e58c57ee228da65ec182cb47719d4506496a0edd@sha256:5b95ec0486643923e80ef54894ed7118887cbcb0450eff93b6272a0c62fe2b1d
-      source_digest: sha256:5b95ec0486643923e80ef54894ed7118887cbcb0450eff93b6272a0c62fe2b1d
-      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:420fb3c941f0be2a
+      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-75822b7e88d12552ee60c44785f644171d691142@sha256:bc5b0ba2c6674ed3d5bc8f0a38ac29eadf0f3a695fded08d3243dd7574040396
+      source_digest: sha256:bc5b0ba2c6674ed3d5bc8f0a38ac29eadf0f3a695fded08d3243dd7574040396
+      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:1125b89f3226deef
 application:
     package: cloud.lazycat.app.rsshub
-    version: 2026.11.8624
-    lpk_sha256: fab77a3cb6d75a4c11ae0bc7216b731106df3ba3d9719254cb04711ce065e396
+    version: 2026.11.8630
+    lpk_sha256: 5fcd322eb89359494fca0dc50cf91e21e99c12b43ab27bb6040b2c29570a8152
     changelog: |-
-        RSSHub update: v2026.11.11-8624.e58c57e
+        RSSHub update: v2026.11.11-8630.75822b7
 
-        Upstream changes since fd7461b (2 commits; up to 80 recent non-merge changes):
-        - feat(route): add Mistral AI full-text news (#23854) (e58c57ee2)
-        - fix(route/dnaindia): read category pages' new layout and dates after one-line text records (fa62ebf55)
+        Upstream changes since e58c57e (10 commits; up to 80 recent non-merge changes):
+        - feat: allow opencc in workerd (#23858) (75822b7e8)
+        - fix(route/podwise): read collections from the cards the redesigned explore page uses (f6a419fa0)
+        - fix(route/nvidia): read blog posts that use the full-width layout so one of them no longer takes the newsroom feed down (064121b6a)
+        - chore(nix): update dependencies hash to sha256-bYoq58ImHc/XD6vklBisPRfLuDBF3QwJuPwWOq984KU= (062ea2d23)
+        - chore(deps): bump nixpkgs from `1d06008` to `f9a75f4` in the nix group (#23857) (9e1c654bd)
+        - chore(deps-dev): bump @cloudflare/workers-types (#23855) (517a127d7)
+        - fix(route/jtn): use the www host now that the bare domain no longer resolves, and read item titles and dates (1f862f861)
+        - fix(route/metacritic): stop looking for an API key the browse pages no longer carry (7838fade5)
+        - fix(route/deloitte): read article dates before cleaning content that holds them (990323e94)
+        - chore(deps-dev): bump discord-api-types from 0.38.57 to 0.38.58 (#23856) (dd90bede8)
 
-        https://github.com/DIYgod/RSSHub/compare/fd7461bbf126718da864429fe64ee3a065df2d5f...e58c57ee228da65ec182cb47719d4506496a0edd
-packaged_at: 2026-11-11T07:18:53.002127026Z
+        https://github.com/DIYgod/RSSHub/compare/e58c57ee228da65ec182cb47719d4506496a0edd...75822b7e88d12552ee60c44785f644171d691142
+packaged_at: 2026-11-11T19:55:50.723982684Z
 reviews:
     - id: 22676
       source:
@@ -197,7 +205,7 @@ reviews:
       fingerprint: sha256:19bf6bbbea97f261a7d320d73c215c00a130f601fe8523ae8ab46da4bee50ae2
       application_version: 2026.11.8624
       lpk_sha256: fab77a3cb6d75a4c11ae0bc7216b731106df3ba3d9719254cb04711ce065e396
-      status: waiting
+      status: approved
       created_at: 2026-11-11T07:19:13.013Z
       submitted_at: 2026-11-11T07:19:13.17249102Z
-      checked_at: 2026-11-11T07:19:13.17249138Z
+      checked_at: 2026-11-11T19:53:40.345085846Z
