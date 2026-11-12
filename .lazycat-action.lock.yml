@@ -6,7 +6,7 @@ source:
     revision: 9b47c74ddc4dc34d9b97791de96964a0654486e1
     tag: v2026.11.12-8637.9b47c74
 fingerprint: sha256:8ac400ed4c95bd1f4921c6c85db4fca9a1cd0d80149f9104edc1fa4d01ad1c42
-status: packaged
+status: submitted
 images:
     - id: rsshub
       source_ref: ghcr.io/diygod/rsshub:chromium-bundled-9b47c74ddc4dc34d9b97791de96964a0654486e1@sha256:8b5d85156a1eae9aad94a48d3e1433e0df3abe10e77be9ad22cb60a48a7a8fc1
@@ -220,3 +220,17 @@ reviews:
       created_at: 2026-11-11T19:56:06.474Z
       submitted_at: 2026-11-11T19:56:06.591017788Z
       checked_at: 2026-11-12T07:47:37.686034518Z
+    - id: 23013
+      source:
+        kind: git
+        version: 2026.11.8637
+        ref: refs/tags/v2026.11.12-8637.9b47c74
+        revision: 9b47c74ddc4dc34d9b97791de96964a0654486e1
+        tag: v2026.11.12-8637.9b47c74
+      fingerprint: sha256:8ac400ed4c95bd1f4921c6c85db4fca9a1cd0d80149f9104edc1fa4d01ad1c42
+      application_version: 2026.11.8637
+      lpk_sha256: 0629a23bea725ed32a315e23ae5d1b081dec67ce25fa20bee32564804c2fe8b0
+      status: waiting
+      created_at: 2026-11-12T07:54:39.096Z
+      submitted_at: 2026-11-12T07:54:39.230281029Z
+      checked_at: 2026-11-12T07:54:39.23028161Z
