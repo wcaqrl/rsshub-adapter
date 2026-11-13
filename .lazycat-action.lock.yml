@@ -1,38 +1,40 @@
 version: 2
 source:
     kind: git
-    version: 2026.11.8641
-    ref: refs/tags/v2026.11.13-8641.0db3292
-    revision: 0db3292f4919c9649cd4c859bc765116cc1691bf
-    tag: v2026.11.13-8641.0db3292
-fingerprint: sha256:564c243ecce9cdad6f7b8e8456015ccd96c19d741e0d4fc9dcd82fa487476a55
-status: submitted
+    version: 2026.11.8644
+    ref: refs/tags/v2026.11.13-8644.7072c35
+    revision: 7072c35fc0465960745c4a2b563e01dd9bfe2d89
+    tag: v2026.11.13-8644.7072c35
+fingerprint: sha256:43766db7d26a04c438c0be10d560a489ce8164140d5799c6d4cd0d89109bdfa0
+status: packaged
 images:
     - id: rsshub
-      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-0db3292f4919c9649cd4c859bc765116cc1691bf@sha256:23ba7fa36f69d382d454ca161eeec8197232800ef03fa19a23d7d05d48b1f307
-      source_digest: sha256:23ba7fa36f69d382d454ca161eeec8197232800ef03fa19a23d7d05d48b1f307
-      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:0b8c45175563ddf4
+      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-7072c35fc0465960745c4a2b563e01dd9bfe2d89@sha256:a1d5e652fa7274cc897de05d5090b73aa4901a4c5467116dcfc93822ffbc67bd
+      source_digest: sha256:a1d5e652fa7274cc897de05d5090b73aa4901a4c5467116dcfc93822ffbc67bd
+      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:77ea014fc43c4be8
 application:
     package: cloud.lazycat.app.rsshub
-    version: 2026.11.8641
-    lpk_sha256: 7610374672ce39018047affc2ba33e34f837bd9991dfc30d81e4bc1c68efffe7
+    version: 2026.11.8644
+    lpk_sha256: ac3e5656fd0b91e2d672dbe079c1b14ccfd3ea7237d1c122a148c7a921445f89
     changelog: |-
-        RSSHub update: v2026.11.13-8641.0db3292
+        RSSHub update: v2026.11.13-8644.7072c35
 
-        Upstream changes since 9b47c74 (10 commits; up to 80 recent non-merge changes):
-        - feat(route): add Arm Newsroom full-text news and blog feeds (#23872) (0db3292f4)
-        - fix(route/4gamers): render embedded poll sections (23877d4ad)
-        - fix(route/cls): drop articles the depth API lists twice (351cb786a)
-        - fix(route/javtiful): keep channel requests in English (d5a3a2fdc)
-        - fix(route/javtiful): keep actress requests in English (7a056c541)
-        - chore(deps): bump rate-limiter-flexible from 11.3.0 to 11.4.0 (#23867) (a392e31d9)
-        - chore(deps-dev): bump @cloudflare/workers-types (#23866) (9d37889cf)
-        - chore(nix): update dependencies hash to sha256-HCtZgCs60IMcbon+woluY5Vu3/EF0pg8PB7e0sMUOHw= (c626832c3)
-        - chore(deps): bump the nix group with 2 updates (#23869) (ab1165b58)
-        - chore(deps): bump dotenv from 18.0.9 to 18.0.10 (#23868) (cce366f91)
+        Upstream changes since 0db3292 (12 commits; up to 80 recent non-merge changes):
+        - chore(deps): bump the oxc group across 1 directory with 6 updates (#23875) (7072c35fc)
+        - chore(deps-dev): bump the vitest group across 1 directory with 2 updates (#23806) (1ad701036)
+        - chore(deps-dev): bump the cloudflare group with 3 updates (#23873) (823e300ca)
+        - chore(deps): bump teleproto from 1.232.1 to 1.233.0 (#23879) (04b84cf19)
+        - chore(nix): update dependencies hash to sha256-ZInp6q83FUsPzrcUmkxqN+rOIx42qEaoe1/CvgkU5J4= (b8e1f7a54)
+        - chore(deps): bump devenv from `9655d32` to `e97515c` in the nix group (#23880) (d1134724c)
+        - fix(route/jin10): drop locked category flashes that carry no text (e27818a57)
+        - chore(deps-dev): bump rolldown from 1.3.0 to 1.3.1 (#23877) (ac675bdcf)
+        - chore(deps): bump header-generator from 2.1.89 to 2.1.90 (#23878) (54d5e1427)
+        - chore(deps-dev): bump the typescript-eslint group with 2 updates (#23876) (bc570b296)
+        - chore(deps): bump the opentelemetry group with 5 updates (#23874) (d26335b88)
+        - fix(route/cncf): drop the featured post when the list repeats it (45c97c58c)
 
-        https://github.com/DIYgod/RSSHub/compare/9b47c74ddc4dc34d9b97791de96964a0654486e1...0db3292f4919c9649cd4c859bc765116cc1691bf
-packaged_at: 2026-11-13T07:26:41.639206482Z
+        https://github.com/DIYgod/RSSHub/compare/0db3292f4919c9649cd4c859bc765116cc1691bf...7072c35fc0465960745c4a2b563e01dd9bfe2d89
+packaged_at: 2026-11-13T20:08:24.560828934Z
 reviews:
     - id: 22676
       source:
@@ -247,7 +249,7 @@ reviews:
       fingerprint: sha256:564c243ecce9cdad6f7b8e8456015ccd96c19d741e0d4fc9dcd82fa487476a55
       application_version: 2026.11.8641
       lpk_sha256: 7610374672ce39018047affc2ba33e34f837bd9991dfc30d81e4bc1c68efffe7
-      status: waiting
+      status: approved
       created_at: 2026-11-13T07:27:03.722Z
       submitted_at: 2026-11-13T07:27:03.879211283Z
-      checked_at: 2026-11-13T07:27:03.879212076Z
+      checked_at: 2026-11-13T20:06:25.027856771Z
