@@ -1,40 +1,29 @@
 version: 2
 source:
     kind: git
-    version: 2026.11.8644
-    ref: refs/tags/v2026.11.13-8644.7072c35
-    revision: 7072c35fc0465960745c4a2b563e01dd9bfe2d89
-    tag: v2026.11.13-8644.7072c35
-fingerprint: sha256:43766db7d26a04c438c0be10d560a489ce8164140d5799c6d4cd0d89109bdfa0
-status: submitted
+    version: 2026.11.8645
+    ref: refs/tags/v2026.11.14-8645.31e46f7
+    revision: 31e46f7618fab85d57bc736ee5b189a4d3419397
+    tag: v2026.11.14-8645.31e46f7
+fingerprint: sha256:4a8fe8fc2d03cb69e70ae18fc5f223c05d0bf46e100b4e651ee905a1059318c4
+status: packaged
 images:
     - id: rsshub
-      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-7072c35fc0465960745c4a2b563e01dd9bfe2d89@sha256:a1d5e652fa7274cc897de05d5090b73aa4901a4c5467116dcfc93822ffbc67bd
-      source_digest: sha256:a1d5e652fa7274cc897de05d5090b73aa4901a4c5467116dcfc93822ffbc67bd
-      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:77ea014fc43c4be8
+      source_ref: ghcr.io/diygod/rsshub:chromium-bundled-31e46f7618fab85d57bc736ee5b189a4d3419397@sha256:9348a0cbc6b75285b6278d939b0819074998d3b6f127186c26ae53474bca0ae1
+      source_digest: sha256:9348a0cbc6b75285b6278d939b0819074998d3b6f127186c26ae53474bca0ae1
+      runtime_ref: registry.lazycat.cloud/peter/diygod/rsshub:522991a5732116b6
 application:
     package: cloud.lazycat.app.rsshub
-    version: 2026.11.8644
-    lpk_sha256: ac3e5656fd0b91e2d672dbe079c1b14ccfd3ea7237d1c122a148c7a921445f89
+    version: 2026.11.8645
+    lpk_sha256: 51bd05504881a3a75fd701bf2f133f3cf931b7b299033bb9fea469e389c31a6e
     changelog: |-
-        RSSHub update: v2026.11.13-8644.7072c35
+        RSSHub update: v2026.11.14-8645.31e46f7
 
-        Upstream changes since 0db3292 (12 commits; up to 80 recent non-merge changes):
-        - chore(deps): bump the oxc group across 1 directory with 6 updates (#23875) (7072c35fc)
-        - chore(deps-dev): bump the vitest group across 1 directory with 2 updates (#23806) (1ad701036)
-        - chore(deps-dev): bump the cloudflare group with 3 updates (#23873) (823e300ca)
-        - chore(deps): bump teleproto from 1.232.1 to 1.233.0 (#23879) (04b84cf19)
-        - chore(nix): update dependencies hash to sha256-ZInp6q83FUsPzrcUmkxqN+rOIx42qEaoe1/CvgkU5J4= (b8e1f7a54)
-        - chore(deps): bump devenv from `9655d32` to `e97515c` in the nix group (#23880) (d1134724c)
-        - fix(route/jin10): drop locked category flashes that carry no text (e27818a57)
-        - chore(deps-dev): bump rolldown from 1.3.0 to 1.3.1 (#23877) (ac675bdcf)
-        - chore(deps): bump header-generator from 2.1.89 to 2.1.90 (#23878) (54d5e1427)
-        - chore(deps-dev): bump the typescript-eslint group with 2 updates (#23876) (bc570b296)
-        - chore(deps): bump the opentelemetry group with 5 updates (#23874) (d26335b88)
-        - fix(route/cncf): drop the featured post when the list repeats it (45c97c58c)
+        Upstream changes since 7072c35 (1 commits; up to 80 recent non-merge changes):
+        - fix(route/sspai): deduplicate series listed in multiple categories (31e46f761)
 
-        https://github.com/DIYgod/RSSHub/compare/0db3292f4919c9649cd4c859bc765116cc1691bf...7072c35fc0465960745c4a2b563e01dd9bfe2d89
-packaged_at: 2026-11-13T20:08:24.560828934Z
+        https://github.com/DIYgod/RSSHub/compare/7072c35fc0465960745c4a2b563e01dd9bfe2d89...31e46f7618fab85d57bc736ee5b189a4d3419397
+packaged_at: 2026-11-14T07:08:19.024997593Z
 reviews:
     - id: 22676
       source:
@@ -263,7 +252,7 @@ reviews:
       fingerprint: sha256:43766db7d26a04c438c0be10d560a489ce8164140d5799c6d4cd0d89109bdfa0
       application_version: 2026.11.8644
       lpk_sha256: ac3e5656fd0b91e2d672dbe079c1b14ccfd3ea7237d1c122a148c7a921445f89
-      status: waiting
+      status: approved
       created_at: 2026-11-13T20:08:41.882Z
       submitted_at: 2026-11-13T20:08:42.006158462Z
-      checked_at: 2026-11-13T20:08:42.006159403Z
+      checked_at: 2026-11-14T07:06:03.265672707Z
